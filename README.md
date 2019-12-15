@@ -1,4 +1,4 @@
-# 1η Εργασία Αρχιτεκτονικής Υπολογιστών (Ομάδα 2)
+# 2η Εργασία Αρχιτεκτονικής Υπολογιστών (Ομάδα 2)
 
 _Ραφαήλ Μπουλογεώργος, ΑΕΜ: 9186_
 
@@ -149,7 +149,7 @@ Cycles per instruction (CPI)  | [system.cpu.cpi [stats.txt]](/Step1_files/sim_re
 Στα παραπάνω, με έντονη γραμματοσειρά σημειώνονται οι default τιμές. 
 Ο αριθμός των instructions που εκτελέστηκε είναι ίσος με 100000, γεγονός που επηρέασε τη μη σημαντική επίπτωση των μεταβολών του L1 instruction size, το οποίο θα ήταν αναμενόμενο.
 
-![Total miss-rate L2 Cache](/charts/step1_q2_grafs/L2_cache_miss_rate_graf.bmp "Total miss-rate L2 Cache")
+![Cache Line effect to L1I miss rate](/charts/09 CACHE I miss.png)
 
 ### Βήμα 3ο Κόστος απόδοσης και βελτιστοποίηση κόστους/απόδοσης
 Παρακάτω επισυνάπτεται ο συνολικός πίνακας των αποτελεσμάτων. 
