@@ -154,6 +154,9 @@ Cycles per instruction (CPI)  | [system.cpu.cpi [stats.txt]](/Step1_files/sim_re
 * L1D-L1I size effect to CPI
 ![L1D-L1I effect to CPI](charts2/02_L1D-L1I_D-Cache_miss.png "L1D-L1I size effect to CPI")
 
+* L1D-L1I size effect to L1D miss rate
+![L1D-L1I effect to L1D miss rate](charts2/02_L1D-L1I_D-Cache_miss.png "L1D-L1I size effect to L1D miss rate")
+
 * Cache Line effect to CPI
 ![Cache Line effect to CPI](charts2/09_CACHE_CPI.png "Cache Line effect to CPI")
 
@@ -172,7 +175,7 @@ Cycles per instruction (CPI)  | [system.cpu.cpi [stats.txt]](/Step1_files/sim_re
 
 Η βέλτιστη επιλογή των παραμέτρων γίνεται εδώ με βάση το γινόμενο COST\*AMAT. Θέλουμε το λίγοτερο δυνατό κόστος και τον μικρότερο δυνατό χρόνο, συνεπώς η καλύτερη επιλογή για κάθε benchmark είναι εκείνη με την μικρότερη τιμή.
 Εναλλακτικά θα μπορούσαμε να πάρουμε την μεγαλύτερη τιμή του λόγου Performance/Cost = 1/ (AMAT x Cost), όπου η απόδοση θα ήταν το 1/AMAT. 
-Η σχέση του AMAT προκύπτει από την βιβλιογραφία βάζοντας συμβατικούς συντελεστές για τα HitRate, αλλά χρησιμοποιώντας τις μετρούμενες τιμές από το gem5 όσον αφορά τα MissRateL1 = (Miss Rate Instruction + Miss Rate Data Cache) και MissRateL2:
+Η σχέση του AMAT προκύπτει από την βιβλιογραφία (_Patterson, Hennessy - Computer Organization and Design, 5th ed., p.402_) βάζοντας συμβατικούς συντελεστές για τα HitRate, αλλά χρησιμοποιώντας τις μετρούμενες τιμές από το gem5 όσον αφορά τα MissRateL1 = (Miss Rate Instruction + Miss Rate Data Cache) και MissRateL2:
 
 **ΑΜΑΤ = HitRateL1 + MissRateL1 x (HitRateL2 + MissRateL2 x MissPenaltyL2)** ή
 
