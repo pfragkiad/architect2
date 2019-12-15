@@ -149,7 +149,8 @@ Cycles per instruction (CPI)  | [system.cpu.cpi [stats.txt]](/Step1_files/sim_re
 Στα παραπάνω, με έντονη γραμματοσειρά σημειώνονται οι default τιμές. 
 Ο αριθμός των instructions που εκτελέστηκε είναι ίσος με 100000, γεγονός που επηρέασε τη μη σημαντική επίπτωση των μεταβολών του L1 instruction size, το οποίο θα ήταν αναμενόμενο.
 
-![Cache Line effect to L1I miss rate](/charts/09 CACHE I miss.png)
+![Cache Line effect to L1I miss rate]("./charts/09 CACHE I miss.png")
+Cache Line effect to L1I miss rate
 
 ### Βήμα 3ο Κόστος απόδοσης και βελτιστοποίηση κόστους/απόδοσης
 Παρακάτω επισυνάπτεται ο συνολικός πίνακας των αποτελεσμάτων. 
