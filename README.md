@@ -147,13 +147,21 @@ Cycles per instruction (CPI)  | [system.cpu.cpi [stats.txt]](/Step1_files/sim_re
   * Cacheline Size: 32, **64**, 128
   
 Στα παραπάνω, με έντονη γραμματοσειρά σημειώνονται οι default τιμές. 
-Ο αριθμός των instructions που εκτελέστηκε είναι ίσος με 100000, γεγονός που επηρέασε τη μη σημαντική επίπτωση των μεταβολών του L1 instruction size, το οποίο θα ήταν αναμενόμενο.
+Ο αριθμός των instructions που εκτελέστηκε είναι ίσος με 100000, γεγονός που επηρέασε τη μη σημαντική επίπτωση των μεταβολών του L1 instruction size, το οποίο θα ήταν αναμενόμενο. 
+
+Χαρακτηριστικές επιπτώσεις των μεταβαλλόμενων παραμέτρων φαίνονται στα παρακάτω γραφήματα:
+
+* L1D-L1I size effect to CPI
+![L1D-L1I effect to CPI](charts2/02_L1D-L1I_D-Cache_miss.png "L1D-L1I size effect to CPI")
 
 * Cache Line effect to CPI
 ![Cache Line effect to CPI](charts2/09_CACHE_CPI.png "Cache Line effect to CPI")
 
 * Cache Line effect to L1I miss rate
 ![Cache Line effect to L1I miss rate](charts2/09_CACHE_I_miss.png "Cache Line effect to L1I miss rate")
+
+* Cache Line effect to L1D miss rate
+![Cache Line effect to L1D miss rate](charts2/09_CACHE_d_miss.png "Cache Line effect to L1D miss rate")
 
 
 
