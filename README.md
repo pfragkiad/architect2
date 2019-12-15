@@ -4,7 +4,7 @@ _Ραφαήλ Μπουλογεώργος, ΑΕΜ: 9186_
 
 _Παύλος Φραγκιαδουλάκης, ΑΕΜ: 8389_
 
-## Προεργασία
+## Ερώτημα 1ο
 Με βάση τη διατύπωση της εργασίας, αποσυμπιέστηκε το αρχείο _spec_cpu2006_gem5.tar.gz_ στον φάκελο εγκατάστασης του gem5. Για την μαζικό compiling και των 5 targets των benchmarks, γράφτηκε ένα νέο makefile στον φάκελο _spec_spu2006_ (στον οποίο βρίσκονται οι υποφάκελοι):
 ```makefile
 SUBDIRS := $(wildcard */src)
@@ -149,7 +149,7 @@ Cycles per instruction (CPI)  | [system.cpu.cpi [stats.txt]](/Step1_files/sim_re
 Στα παραπάνω, με έντονη γραμματοσειρά σημειώνονται οι default τιμές. 
 Ο αριθμός των instructions που εκτελέστηκε είναι ίσος με 100000, γεγονός που επηρέασε τη μη σημαντική επίπτωση των μεταβολών του L1 instruction size, το οποίο θα ήταν αναμενόμενο.
 
-![Cache Line effect to L1I miss rate](charts/09 CACHE I miss.png "Cache Line effect to L1I miss rate")
+![Cache Line effect to L1I miss rate](charts/09_CACHE_I_miss.png "Cache Line effect to L1I miss rate")
 
 
 ### Βήμα 3ο Κόστος απόδοσης και βελτιστοποίηση κόστους/απόδοσης
