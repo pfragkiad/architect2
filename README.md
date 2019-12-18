@@ -156,18 +156,22 @@ Cycles per instruction (CPI)  | [system.cpu.cpi [stats.txt]](/Step1_files/sim_re
 Το μέγεθος του Cache Line φαίνεται να επηρεάζει σχεδόν όλα τα μεγέθη ενδιαφέροντος.
 * Cache Line effect to CPI
 ![Cache Line effect to CPI](charts/01_CACHE_CPI.png)
+
 Παρατηρούμε ότι υπάρχει σημαντική μείωση του CPI με αύξηση του Cache Line κυρίως στα spechmmer, speclibm προγράμματα. Στα άλλα η επίπτωση είναι αμελητέα.
 
 * Cache Line effect to data cache miss rate
 ![Cache Line effect to dcache miss rate](charts/01_CACHE_DCACHE.png)
+
 Η επίπτωση και εδώ είναι παρόμοια με παραπάνω. Υπάρχει μείωση του data cache miss rate με αύξηση του Cache Line κυρίως στα spechmmer, speclibm προγράμματα.
 
 * Cache Line effect to instruction cache miss rate
 ![Cache Line effect to icache miss rate](charts/01_CACHE_ICACHE.png)
+
 Εδώ βλέπουμε ότι το miss rate υφίσταται πρακτικά μόνο στο spechmmer στο οποίο εμφανίζεται πτώση
 
 * Cache Line effect to L2 overall miss rate
 ![Cache Line effect to L2 overall miss rate](charts/01_CACHE_L2.png)
+
 Εκτός του speclibm αύξηση του Cache Line επιφέρει μείωση του L2 overall miss rate σε όλα τα προγράμματα. Πιο έντονη είναι η πτώση στα specbzip, specmcf.
 
 #### L1D size/L1I size
@@ -175,7 +179,17 @@ Cycles per instruction (CPI)  | [system.cpu.cpi [stats.txt]](/Step1_files/sim_re
 * L1D size/L1I size effect to CPI
 ![L1D size/L1I size effect to CPI](charts/02_L1D_L1I_CPI.png)
 
+Τα μεγέθη του L1 data/L1 instr. προκαλούν αμελητέα μείωση στο CPI.
 
+* L1D size/L1I size effect to data cache miss rate
+![L1D size/L1I size effect to data cache miss rate](charts/02_L1D_L1I_DCACHE.png)
+
+Το μέγεθος του L1 instruction size δεν φαίνεται να επηρεάζει το data cache miss rate. Το L1 data size μειώνει το data cache miss rate σε όλα τα προγράμματα εκτός του speclibm.
+
+* L1D size/L1I size effect to instruction cache miss rate
+![L1D size/L1I size effect to data cache miss rate](charts/02_L1D_L1I_ICACHE.png)
+
+Το μέγεθος του L1 instruction size μειώνει το instruction cache miss rate πάρα πολύ στο specmcf και λιγότερο στο spechmmer. Το L1 data size έχει αμελητέα επίπτωση.
 
 
 
