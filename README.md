@@ -191,6 +191,54 @@ Cycles per instruction (CPI)  | [system.cpu.cpi [stats.txt]](/Step1_files/sim_re
 
 Το μέγεθος του L1 instruction size μειώνει το instruction cache miss rate πάρα πολύ στο specmcf και λιγότερο στο spechmmer. Το L1 data size έχει αμελητέα επίπτωση.
 
+* L1D size/L1I size effect to L2 overall miss rate
+![L1D size/L1I size effect to L2 overall miss rate](charts/02_L1D_L1I_L2.png)
+
+Το L1 instruction size φαίνεται να αυξάνει το L2 miss rate σχεδόν σε όλες τις περιπτώσεις εκτός του speclibm.
+
+#### L1D associativity
+
+* L1D associativity effect to CPI
+![L1D associativity effect to CPI](charts/03_L1D_ASSOC_CPI.png)
+
+To CPI δεν φαίνεται να επηρεάζεται.
+
+* L1D associativity effect to data cache miss rate
+![L1D associativity effect to data cache miss rate](charts/03_L1D_ASSOC_DCACHE.png)
+
+Εμφανίζεται μικρή μείωση του data cache miss rate με την αύξηση του associativity στα spechmmer, specbzip.
+
+* L1D associativity effect to instruction cache miss rate
+![L1D associativity effect to instruction cache miss rate](charts/03_L1D_ASSOC_ICACHE.png)
+
+Δεν επηρεάζεται το instruction cache miss rate.
+
+* L1D associativity effect to L2 overall miss rate
+![L1D associativity effect to L2 overall miss rate](charts/03_L1D_ASSOC_L2.png)
+
+Με την αύξηση του L1D associativity, φαίνεται να αυξάνεται το L2 miss rate στα specbzip, specmcf, spechmmer.
+
+#### L1I associativity
+
+* L1I associativity effect to CPI
+![L1I associativity effect to CPI](charts/04_L1I_ASSOC_CPI.png)
+
+To CPI δεν φαίνεται να επηρεάζεται.
+
+* L1I associativity effect to data cache miss rate
+![L1I associativity effect to data cache miss rate](charts/04_L1I_ASSOC_DCACHE.png)
+
+Το data cache miss rate δεν φαίνεται να επηρεάζεται.
+
+* L1I associativity effect to instruction cache miss rate
+![L1I associativity effect to instruction cache miss rate](charts/04_L1I_ASSOC_ICACHE.png)
+
+Δεν επηρεάζεται πρακτικά το instruction cache miss rate.
+
+* L1I associativity effect to L2 overall miss rate
+![L1I associativity effect to L2 overall miss rate](charts/04_L1I_ASSOC_L2.png)
+
+Δεν επηρεάζεται πρακτικά το L2 overall miss rate.
 
 
 ### Βήμα 3ο Κόστος απόδοσης και βελτιστοποίηση κόστους/απόδοσης
