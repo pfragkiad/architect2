@@ -139,35 +139,150 @@ Cycles per instruction (CPI)  | [system.cpu.cpi [stats.txt]](/Step1_files/sim_re
 ### Βήμα 2ο Design Exploration – Βελτιστοποίηση απόδοσης
 
 Για την εύρεση της επίπτωσης στην απόδοση στις διάφορες παραμέτρους που εξετάζουμε, τα παρακάτω εύρη που αναφέρονται παρακάτω. Να σημειωθεί ότι το μέγεθος των Data/Instruction για την L1 είναι επιλεγμένο έτσι ώστε να το άθροισμά τους να μην υπερβαίνει τα 256 kB:
-  * L1 Data/Instruction Size [kB]: 128/128, 128/64, 32/128, **32/64**, 64/128, 64/64
-  * L2 Size [kB]: **512**, 1024, 2048, 4096
-  * L1 Instruction Associativity: **1**, 2, 4
-  * L1 Data Associativity: **1**, 2, 4
-  * L2 Data Associativity: 1, **2**, 4
   * Cacheline Size: 32, **64**, 128
+  * L1 Data Size [kB]: 16, **32**, 64, 128
+  * L1 Instruction Size [kB]: 16, 32, **64**, 128
+  * L1 Data Associativity: **1**, 2, 4
+  * L1 Instruction Associativity: **1**, 2, 4
+  * L2 Data Associativity: 1, **2**, 4
+  * L2 Size [kB]: **512**, 1024, 2048, 4096  
   
 Στα παραπάνω, με έντονη γραμματοσειρά σημειώνονται οι default τιμές. 
-Ο αριθμός των instructions που εκτελέστηκε είναι ίσος με 100000, γεγονός που επηρέασε τη μη σημαντική επίπτωση των μεταβολών του L1 instruction size, το οποίο θα ήταν αναμενόμενο. 
+Ο αριθμός των instructions που εκτελέστηκε είναι ίσος με 10<sup>8</sup>, γεγονός που επηρέασε τη μη σημαντική επίπτωση των μεταβολών του L1 instruction size, το οποίο θα ήταν αναμενόμενο. 
 
-Χαρακτηριστικές επιπτώσεις των μεταβαλλόμενων παραμέτρων φαίνονται στα παρακάτω γραφήματα:
+Παρακάτω παρατίθενται τα χαρακτηριστικά γραφήματα για τις παραπάνω περιπτώσεις, στις οποίες παρουσιάζεται κάποια αξιοσημείωτη μεταβολή:
 
-* L1D-L1I size effect to CPI
-![L1D-L1I effect to CPI](charts2/02_L1D-L1I_D-Cache_miss.png "L1D-L1I size effect to CPI")
-
-* L1D-L1I size effect to L1D miss rate
-![L1D-L1I effect to L1D miss rate](charts2/02_L1D-L1I_D-Cache_miss.png "L1D-L1I size effect to L1D miss rate")
-
+#### CACHE LINE
+Το μέγεθος του Cache Line φαίνεται να επηρεάζει σχεδόν όλα τα μεγέθη ενδιαφέροντος.
 * Cache Line effect to CPI
-![Cache Line effect to CPI](charts2/09_CACHE_CPI.png "Cache Line effect to CPI")
+![Cache Line effect to CPI](charts/01_CACHE_CPI.png)
 
-* Cache Line effect to L1I miss rate
-![Cache Line effect to L1I miss rate](charts2/09_CACHE_I_miss.png "Cache Line effect to L1I miss rate")
+Παρατηρούμε ότι υπάρχει σημαντική μείωση του CPI με αύξηση του Cache Line κυρίως στα spechmmer, speclibm προγράμματα. Στα άλλα η επίπτωση είναι αμελητέα.
 
-* Cache Line effect to L1D miss rate
-![Cache Line effect to L1D miss rate](charts2/09_CACHE_d_miss.png "Cache Line effect to L1D miss rate")
+* Cache Line effect to data cache miss rate
+![Cache Line effect to dcache miss rate](charts/01_CACHE_DCACHE.png)
 
+Η επίπτωση και εδώ είναι παρόμοια με παραπάνω. Υπάρχει μείωση του data cache miss rate με αύξηση του Cache Line κυρίως στα spechmmer, speclibm προγράμματα.
 
+* Cache Line effect to instruction cache miss rate
+![Cache Line effect to icache miss rate](charts/01_CACHE_ICACHE.png)
 
+Εδώ βλέπουμε ότι το miss rate υφίσταται πρακτικά μόνο στο spechmmer στο οποίο εμφανίζεται πτώση
+
+* Cache Line effect to L2 overall miss rate
+![Cache Line effect to L2 overall miss rate](charts/01_CACHE_L2.png)
+
+Εκτός του speclibm αύξηση του Cache Line επιφέρει μείωση του L2 overall miss rate σε όλα τα προγράμματα. Πιο έντονη είναι η πτώση στα specbzip, specmcf.
+
+#### L1D size/L1I size
+
+* L1D size/L1I size effect to CPI
+![L1D size/L1I size effect to CPI](charts/02_L1D_L1I_CPI.png)
+
+Τα μεγέθη του L1 data/L1 instr. προκαλούν αμελητέα μείωση στο CPI.
+
+* L1D size/L1I size effect to data cache miss rate
+![L1D size/L1I size effect to data cache miss rate](charts/02_L1D_L1I_DCACHE.png)
+
+Το μέγεθος του L1 instruction size δεν φαίνεται να επηρεάζει το data cache miss rate. Το L1 data size μειώνει το data cache miss rate σε όλα τα προγράμματα εκτός του speclibm.
+
+* L1D size/L1I size effect to instruction cache miss rate
+![L1D size/L1I size effect to data cache miss rate](charts/02_L1D_L1I_ICACHE.png)
+
+Το μέγεθος του L1 instruction size μειώνει το instruction cache miss rate πάρα πολύ στο specmcf και λιγότερο στο spechmmer. Το L1 data size έχει αμελητέα επίπτωση.
+
+* L1D size/L1I size effect to L2 overall miss rate
+![L1D size/L1I size effect to L2 overall miss rate](charts/02_L1D_L1I_L2.png)
+
+Το L1 instruction size φαίνεται να αυξάνει το L2 miss rate σχεδόν σε όλες τις περιπτώσεις εκτός του speclibm.
+
+#### L1D associativity
+
+* L1D associativity effect to CPI
+![L1D associativity effect to CPI](charts/03_L1D_ASSOC_CPI.png)
+
+To CPI δεν φαίνεται να επηρεάζεται.
+
+* L1D associativity effect to data cache miss rate
+![L1D associativity effect to data cache miss rate](charts/03_L1D_ASSOC_DCACHE.png)
+
+Εμφανίζεται μικρή μείωση του data cache miss rate με την αύξηση του associativity στα spechmmer, specbzip.
+
+* L1D associativity effect to instruction cache miss rate
+![L1D associativity effect to instruction cache miss rate](charts/03_L1D_ASSOC_ICACHE.png)
+
+Δεν επηρεάζεται το instruction cache miss rate.
+
+* L1D associativity effect to L2 overall miss rate
+![L1D associativity effect to L2 overall miss rate](charts/03_L1D_ASSOC_L2.png)
+
+Με την αύξηση του L1D associativity, φαίνεται να αυξάνεται το L2 miss rate στα specbzip, specmcf, spechmmer.
+
+#### L1I associativity
+
+* L1I associativity effect to CPI
+![L1I associativity effect to CPI](charts/04_L1I_ASSOC_CPI.png)
+
+To CPI δεν φαίνεται να επηρεάζεται.
+
+* L1I associativity effect to data cache miss rate
+![L1I associativity effect to data cache miss rate](charts/04_L1I_ASSOC_DCACHE.png)
+
+Το data cache miss rate δεν φαίνεται να επηρεάζεται.
+
+* L1I associativity effect to instruction cache miss rate
+![L1I associativity effect to instruction cache miss rate](charts/04_L1I_ASSOC_ICACHE.png)
+
+Δεν επηρεάζεται πρακτικά το instruction cache miss rate.
+
+* L1I associativity effect to L2 overall miss rate
+![L1I associativity effect to L2 overall miss rate](charts/04_L1I_ASSOC_L2.png)
+
+Δεν επηρεάζεται πρακτικά το L2 overall miss rate.
+
+#### L2D associativity
+
+* L2D associativity effect to CPI
+![L2D associativity effect to CPI](charts/05_L2D_ASSOC_CPI.png)
+
+To CPI δεν φαίνεται να επηρεάζεται.
+
+* L2D associativity effect to data cache miss rate
+![L2D associativity effect to data cache miss rate](charts/05_L2D_ASSOC_DCACHE.png)
+
+Το data cache miss rate δεν φαίνεται να επηρεάζεται.
+
+* L2D associativity effect to instruction cache miss rate
+![L2D associativity effect to instruction cache miss rate](charts/05_L2D_ASSOC_ICACHE.png)
+
+Δεν επηρεάζεται το instruction cache miss rate.
+
+* L2D associativity effect to L2 overall miss rate
+![L2D associativity effect to L2 overall miss rate](charts/05_L2D_ASSOC_L2.png)
+
+Δεν επηρεάζεται πρακτικά το L2 overall miss rate. Υπάρχει μία πολύ μικρή μείωση στα specbzip, specmcf.
+
+#### L2 size [kB]
+
+* L2 size effect to CPI
+![L2 size effect to CPI](charts/06_L2SIZE_CPI.png)
+
+To CPI δεν φαίνεται να επηρεάζεται.
+
+* L2 size effect to data cache miss rate
+![L2 size effect to data cache miss rate](charts/06_L2SIZE_DCACHE.png)
+
+Το data cache miss rate δεν φαίνεται να επηρεάζεται.
+
+* L2 size effect to instruction cache miss rate
+![L2 size effect to instruction cache miss rate](charts/06_L2SIZE_ICACHE.png)
+
+Δεν επηρεάζεται το instruction cache miss rate.
+
+* L2 size effect to L2 overall miss rate
+![L2 size effect to L2 overall miss rate](charts/06_L2SIZE_L2.png)
+
+Εμφανίζεται μία μείωση του L2 overall miss rate (με την αύξηση του L2 size) στα specbzip, specmcf.
 
 
 ### Βήμα 3ο Κόστος απόδοσης και βελτιστοποίηση κόστους/απόδοσης
