@@ -156,24 +156,24 @@ Cycles per instruction (CPI)  | [system.cpu.cpi [stats.txt]](/Step1_files/sim_re
 Το μέγεθος του Cache Line φαίνεται να επηρεάζει σχεδόν όλα τα μεγέθη ενδιαφέροντος.
 * Cache Line effect to CPI
 ![Cache Line effect to CPI](charts/01_CACHE_CPI.png)
+Παρατηρούμε ότι υπάρχει σημαντική μείωση του CPI με αύξηση του Cache Line κυρίως στα spechmmer, speclibm προγράμματα. Στα άλλα η επίπτωση είναι αμελητέα.
 
 * Cache Line effect to data cache miss rate
 ![Cache Line effect to dcache miss rate](charts/01_CACHE_DCACHE.png)
+Η επίπτωση και εδώ είναι παρόμοια με παραπάνω. Υπάρχει μείωση του data cache miss rate με αύξηση του Cache Line κυρίως στα spechmmer, speclibm προγράμματα.
 
 * Cache Line effect to instruction cache miss rate
 ![Cache Line effect to icache miss rate](charts/01_CACHE_ICACHE.png)
+Εδώ βλέπουμε ότι το miss rate υφίσταται πρακτικά μόνο στο spechmmer στο οποίο εμφανίζεται πτώση
 
 * Cache Line effect to L2 overall miss rate
 ![Cache Line effect to L2 overall miss rate](charts/01_CACHE_L2.png)
+Εκτός του speclibm αύξηση του Cache Line επιφέρει μείωση του L2 overall miss rate σε όλα τα προγράμματα. Πιο έντονη είναι η πτώση στα specbzip, specmcf.
 
 #### L1D size/L1I size
 
-
-* Cache Line effect to L1I miss rate
-![Cache Line effect to L1I miss rate](charts2/09_CACHE_I_miss.png "Cache Line effect to L1I miss rate")
-
-* Cache Line effect to L1D miss rate
-![Cache Line effect to L1D miss rate](charts2/09_CACHE_d_miss.png "Cache Line effect to L1D miss rate")
+* L1D size/L1I size effect to CPI
+![L1D size/L1I size effect to CPI](charts/02_L1D_L1I_CPI.png)
 
 
 
