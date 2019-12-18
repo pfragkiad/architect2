@@ -240,6 +240,50 @@ To CPI δεν φαίνεται να επηρεάζεται.
 
 Δεν επηρεάζεται πρακτικά το L2 overall miss rate.
 
+#### L2D associativity
+
+* L2D associativity effect to CPI
+![L2D associativity effect to CPI](charts/05_L2D_ASSOC_CPI.png)
+
+To CPI δεν φαίνεται να επηρεάζεται.
+
+* L2D associativity effect to data cache miss rate
+![L2D associativity effect to data cache miss rate](charts/05_L2D_ASSOC_DCACHE.png)
+
+Το data cache miss rate δεν φαίνεται να επηρεάζεται.
+
+* L2D associativity effect to instruction cache miss rate
+![L2D associativity effect to instruction cache miss rate](charts/05_L2D_ASSOC_ICACHE.png)
+
+Δεν επηρεάζεται το instruction cache miss rate.
+
+* L2D associativity effect to L2 overall miss rate
+![L2D associativity effect to L2 overall miss rate](charts/05_L2D_ASSOC_L2.png)
+
+Δεν επηρεάζεται πρακτικά το L2 overall miss rate. Υπάρχει μία πολύ μικρή μείωση στα specbzip, specmcf.
+
+#### L2 size [kB]
+
+* L2 size effect to CPI
+![L2 size effect to CPI](charts/06_L2SIZE_CPI.png)
+
+To CPI δεν φαίνεται να επηρεάζεται.
+
+* L2 size effect to data cache miss rate
+![L2 size effect to data cache miss rate](charts/06_L2SIZE_DCACHE.png)
+
+Το data cache miss rate δεν φαίνεται να επηρεάζεται.
+
+* L2 size effect to instruction cache miss rate
+![L2 size effect to instruction cache miss rate](charts/06_L2SIZE_ICACHE.png)
+
+Δεν επηρεάζεται το instruction cache miss rate.
+
+* L2 size effect to L2 overall miss rate
+![L2 size effect to L2 overall miss rate](charts/06_L2SIZE_L2.png)
+
+Εμφανίζεται μία μείωση του L2 overall miss rate (με την αύξηση του L2 size) στα specbzip, specmcf.
+
 
 ### Βήμα 3ο Κόστος απόδοσης και βελτιστοποίηση κόστους/απόδοσης
 Παρακάτω επισυνάπτεται ο συνολικός πίνακας των αποτελεσμάτων. 
