@@ -151,14 +151,22 @@ Cycles per instruction (CPI)  | [system.cpu.cpi [stats.txt]](/Step1_files/sim_re
 Ο αριθμός των instructions που εκτελέστηκε είναι ίσος με 10<sup>8</sup>, γεγονός που επηρέασε τη μη σημαντική επίπτωση των μεταβολών του L1 instruction size, το οποίο θα ήταν αναμενόμενο. 
 
 Παρακάτω παρατίθενται τα χαρακτηριστικά γραφήματα για τις παραπάνω περιπτώσεις, στις οποίες παρουσιάζεται κάποια αξιοσημείωτη μεταβολή:
+
 #### CACHE LINE
 Το μέγεθος του Cache Line φαίνεται να επηρεάζει σχεδόν όλα τα μεγέθη ενδιαφέροντος.
 * Cache Line effect to CPI
 ![Cache Line effect to CPI](charts/01_CACHE_CPI.png)
 
-* L1D-L1I size effect to L1D miss rate
-![L1D-L1I effect to L1D miss rate](charts2/02_L1D-L1I_D-Cache_miss.png "L1D-L1I size effect to L1D miss rate")
+* Cache Line effect to data cache miss rate
+![Cache Line effect to dcache miss rate](charts/01_CACHE_DCACHE.png)
 
+* Cache Line effect to instruction cache miss rate
+![Cache Line effect to icache miss rate](charts/01_CACHE_ICACHE.png)
+
+* Cache Line effect to L2 overall miss rate
+![Cache Line effect to L2 overall miss rate](charts/01_CACHE_L2.png)
+
+#### L1D size/L1I size
 
 
 * Cache Line effect to L1I miss rate
