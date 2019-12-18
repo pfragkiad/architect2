@@ -151,7 +151,8 @@ Cycles per instruction (CPI)  | [system.cpu.cpi [stats.txt]](/Step1_files/sim_re
 Ο αριθμός των instructions που εκτελέστηκε είναι ίσος με 10<sup>8</sup>, γεγονός που επηρέασε τη μη σημαντική επίπτωση των μεταβολών του L1 instruction size, το οποίο θα ήταν αναμενόμενο. 
 
 Παρακάτω παρατίθενται τα χαρακτηριστικά γραφήματα για τις παραπάνω περιπτώσεις, στις οποίες παρουσιάζεται κάποια αξιοσημείωτη μεταβολή:
-
+#### CACHE LINE
+Το μέγεθος του Cache Line φαίνεται να επηρεάζει σχεδόν όλα τα μεγέθη ενδιαφέροντος.
 * Cache Line effect to CPI
 ![Cache Line effect to CPI](charts/01_CACHE_CPI.png)
 
