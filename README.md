@@ -139,26 +139,26 @@ Cycles per instruction (CPI)  | [system.cpu.cpi [stats.txt]](/Step1_files/sim_re
 ### Βήμα 2ο Design Exploration – Βελτιστοποίηση απόδοσης
 
 Για την εύρεση της επίπτωσης στην απόδοση στις διάφορες παραμέτρους που εξετάζουμε, τα παρακάτω εύρη που αναφέρονται παρακάτω. Να σημειωθεί ότι το μέγεθος των Data/Instruction για την L1 είναι επιλεγμένο έτσι ώστε να το άθροισμά τους να μην υπερβαίνει τα 256 kB:
-  * L1 Data/Instruction Size [kB]: 128/128, 128/64, 32/128, **32/64**, 64/128, 64/64
-  * L2 Size [kB]: **512**, 1024, 2048, 4096
-  * L1 Instruction Associativity: **1**, 2, 4
-  * L1 Data Associativity: **1**, 2, 4
-  * L2 Data Associativity: 1, **2**, 4
   * Cacheline Size: 32, **64**, 128
+  * L1 Data Size [kB]: 16, **32**, 64, 128
+  * L1 Instruction Size [kB]: 16, 32, **64**, 128
+  * L1 Data Associativity: **1**, 2, 4
+  * L1 Instruction Associativity: **1**, 2, 4
+  * L2 Data Associativity: 1, **2**, 4
+  * L2 Size [kB]: **512**, 1024, 2048, 4096  
   
 Στα παραπάνω, με έντονη γραμματοσειρά σημειώνονται οι default τιμές. 
-Ο αριθμός των instructions που εκτελέστηκε είναι ίσος με 100000, γεγονός που επηρέασε τη μη σημαντική επίπτωση των μεταβολών του L1 instruction size, το οποίο θα ήταν αναμενόμενο. 
+Ο αριθμός των instructions που εκτελέστηκε είναι ίσος με 10<sup>8</sup>, γεγονός που επηρέασε τη μη σημαντική επίπτωση των μεταβολών του L1 instruction size, το οποίο θα ήταν αναμενόμενο. 
 
-Χαρακτηριστικές επιπτώσεις των μεταβαλλόμενων παραμέτρων φαίνονται στα παρακάτω γραφήματα:
+Παρακάτω παρατίθενται τα χαρακτηριστικά γραφήματα για τις παραπάνω περιπτώσεις, στις οποίες παρουσιάζεται κάποια αξιοσημείωτη μεταβολή:
 
-* L1D-L1I size effect to CPI
-![L1D-L1I effect to CPI](charts2/02_L1D-L1I_D-Cache_miss.png "L1D-L1I size effect to CPI")
+* Cache Line effect to CPI
+![Cache Line effect to CPI](charts/01_CACHE_CPI.png)
 
 * L1D-L1I size effect to L1D miss rate
 ![L1D-L1I effect to L1D miss rate](charts2/02_L1D-L1I_D-Cache_miss.png "L1D-L1I size effect to L1D miss rate")
 
-* Cache Line effect to CPI
-![Cache Line effect to CPI](charts2/09_CACHE_CPI.png "Cache Line effect to CPI")
+
 
 * Cache Line effect to L1I miss rate
 ![Cache Line effect to L1I miss rate](charts2/09_CACHE_I_miss.png "Cache Line effect to L1I miss rate")
