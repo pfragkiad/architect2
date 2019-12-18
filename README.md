@@ -292,7 +292,7 @@ To CPI δεν φαίνεται να επηρεάζεται.
 Εναλλακτικά θα μπορούσαμε να πάρουμε την μεγαλύτερη τιμή του λόγου Performance/Cost = 1/ (AMAT x Cost), όπου η απόδοση θα ήταν το 1/AMAT. 
 Η σχέση του AMAT προκύπτει από την βιβλιογραφία (_Patterson, Hennessy - Computer Organization and Design, 5th ed., p.402_) βάζοντας συμβατικούς συντελεστές για τα HitRate, αλλά χρησιμοποιώντας τις μετρούμενες τιμές από το gem5 όσον αφορά τα MissRateL1 = (Miss Rate Instruction + Miss Rate Data Cache) και MissRateL2:
 
-**ΑΜΑΤ = HitRateL<sub>1</sub> + MissRateL1 x (HitRateL2 + MissRateL2 x MissPenaltyL2)** ή
+**ΑΜΑΤ = HitRate<sub>L1</sub> + MissRate<sub>L1</sub> x (HitRate<sub>L2</sub> + MissRate<sub>L2</sub> x MissPenalty<sub>L2</sub>)** ή
 
 **AMAT = 1 + (system.cpu.dcache.overall_miss_rate::total + system.cpu.icache.overall_miss_rate::total) x (10 + system.l2.overall_miss_rate::total
  x 100)**
